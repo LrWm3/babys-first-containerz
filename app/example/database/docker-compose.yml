@@ -1,1 +1,12 @@
 # TODO - deploy neo4j or something
+version: "3"
+services:
+  neo4j:
+    image: "bitnami/neo4j:3"
+    container_name: neo4j
+    volumes:
+      - "neo4j_data:/bitnami"
+    environment:
+      - NEO4J_AUTH=neo4j/neo4j
+volumes:
+  neo4j_data:

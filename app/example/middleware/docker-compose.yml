@@ -1,1 +1,12 @@
 # TODO - deploy some node middleware or something
+version: "3"
+services:
+  neo4j:
+    image: "node-middleware"
+    container_name: node-middleware
+    volumes:
+      - "neo4j_data:/bitnami"
+    environment:
+      - NEO4J_AUTH=neo4j/neo4j
+volumes:
+  neo4j_data:
