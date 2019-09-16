@@ -91,7 +91,15 @@ repeat the process for the final baby block. when you attempt to redeploy using 
 
 ## but what if baby wants to deploy another middleware service
 
-[read the traefik docs](https://docs.traefik.io/configuration/backends/docker/#on-containers) to make sure you know what you're doing and then do that.
+setting up as many custom services on a single node should be pretty easy, but because we set up the first service to take over the entire `your-awesome-domain-name.com`, its not that simple. you see, if you try and make a request to `app2.your-awesome-domain-name.com`, you'll get a `CORS` error. so you need to set up `your-awesome-domain-name.com/app2` to redirect requests to the app2 docker container. This can be done like so:
+  - "traefik.enable=true"
+  - "traefik.port=8080"
+  - "traefik.frontend.rule=Host:your-awesome-domain-name.com;PathPrefixStrip:/app2"
+  - "traefik.frontend.priority=10"
+  
+then requests to `your-awesome-domain-name.com/app2` will go to the second app instead of the first one, since the priority is higher than our original middleware application.
+
+[read the traefik docs on matchers](https://docs.traefik.io/basics/#matchers) for more details on how `traefik.frontend.rule=` can be configured to match specific backend services.
 
 ## but what if baby wants deploy on commit
 
