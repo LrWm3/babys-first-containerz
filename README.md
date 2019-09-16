@@ -45,7 +45,7 @@ if you can't get to `portainer.your-awesome-domain-name.com`, check the logs for
 So there's two options here; if its a regular database, its easy because it can be deployed from 
 `portainer.your-awesome-domain-name.com` and it doesn't need to be exposed to the outside world at all, which is great.
 
-alternative, a docker-compose file could be used, but ultimately either is fine.
+alternatively, a docker-compose file could be used, but ultimately either is fine.
 
 > Not sure what to put in your app instead of `localhost`? well, whatever name is given to the container ALSO 
 corresponds to the 'in-container-cluster' network DNS name! So if you deploy a container with name `neo4j`, that
