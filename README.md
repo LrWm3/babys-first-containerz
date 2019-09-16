@@ -30,8 +30,7 @@ that in this repo though so...
 ## supportive baby block: setting up automatic ssl-termination and portainer for support
 
 this sets up ssl termination so when you go to `your-awesome-domain-name.com` it doesnt give a security warning, and
-also sets up `portainer` as a tool for those who haven't spent thirty years using the 
-commandline can still monitor and deploy docker containers.
+also sets up `portainer` as a tool even babys can use to monitor and deploy docker containers
 
 2. ssh into the DO node, or better yet, connect to the DO node using `Visual Studio Code SSH-Remote` with `[cmd + shift + p] type 'Remote-ssh:Connect to host'`
 3. clone this repo `git clone https://github.com/WilliamTheMarsman/babys-first-containerz.git`
