@@ -7,7 +7,7 @@ Docker container based development for three-year-olds
 I was helping a friend set up his middleware-app + database on a $5/mo server. I was able to set the database up quickly 
 enough, and connect his app to it, but got stuck when putting everything behind a lets-encrypt reverse proxy.
 
-Furthermore, the entire processseemed pretty confusing from a beginners' perspective.
+Furthermore, the entire process seemed pretty confusing from a beginners' perspective.
  
 This project is an attempt at creating a containerization development environment even babbys' could use.
 
