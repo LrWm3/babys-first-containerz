@@ -24,7 +24,7 @@ Get a node and a domain name and set that up properly
 2. create an A record for `your-awesome-domain-name.com` pointing at your DO node IP
 3. create a CNAME record for your domain with `*` to `your-awesome-domain-name.com` to allow all subdomains
 
-> DNS changes can take a while, which can cause automatic ssl to not work properly. I will add a backdoor to make this easier to test later by adding another docker-compose file. This additional docker-compose feil will expose external backdoor ports to portainer and traefik.
+> DNS changes can take a while, which can cause automatic ssl to not work properly. I will add a backdoor to make this easier to test later by adding another docker-compose file. This additional docker-compose file will expose external backdoor ports to portainer and traefik.
 
 ## supportive baby block: setting up automatic ssl-termination and portainer for support
 
