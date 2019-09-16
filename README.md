@@ -31,12 +31,12 @@ Get a node and a domain name and set that up properly
 this sets up ssl termination so when you go to `your-awesome-domain-name.com` it doesnt give a security warning, and
 also sets up `portainer` as a tool even babys can use to monitor and deploy docker containers
 
-2. ssh into the DO node, or better yet, connect to the DO node using `Visual Studio Code SSH-Remote` with `[cmd + shift + p] type 'Remote-ssh:Connect to host'`
-3. clone this repo `git clone https://github.com/WilliamTheMarsman/babys-first-containerz.git`
-4. replace `codingwhileblack.xyz` with `your-awesome-domain-name.com` in `traefik.toml` and `docker-compose.yml`.
-7. run `docker-compose up -d`
-8. visit `portainer.your-awesome-domain-name.com` and **change the admin password right away**
-9. visit `traefik.codingwhileblack.xyz` to see your reverse-proxy stuff
+1. ssh into the DO node, or better yet, connect to the DO node using `Visual Studio Code SSH-Remote` with `[cmd + shift + p] type 'Remote-ssh:Connect to host'`
+2. clone this repo `git clone https://github.com/WilliamTheMarsman/babys-first-containerz.git`
+3. replace `codingwhileblack.xyz` with `your-awesome-domain-name.com` in `traefik.toml` and `docker-compose.yml`.
+4. run `docker-compose up -d`
+5. visit `portainer.your-awesome-domain-name.com` and **change the admin password right away**
+6. visit `traefik.codingwhileblack.xyz` to see your reverse-proxy stuff
 
 if you can't get to `portainer.your-awesome-domain-name.com`, check the logs for traefik with `docker logs traefik` on the DO node. if you can get to `portainer.your-awesome-domain-name.com`, this is the best place to check the logs.
 
@@ -68,12 +68,12 @@ Alternatively, this would probably work as docker labels for the UI component of
 
 With all the supporting services stood up, we can add the final baby-block to this project.
 
-5. change your app to point to stuff like `neo4j` instead of `localhost`
-1. build your app (can skip optional if building it on the node)
-2. build a docker image for your app (can skip optional if building it on the node)
-3. (opt) push docker image to a private docker registry in gitlab (or somewhere else)
-4. (opt) add your private docker registry in portainer to allow pulling the docker image
-5. use portainer or a docker-compose file to deploy your app docker image, with docker labels:
+1. change your app to point to stuff like `neo4j` instead of `localhost`
+2. build your app (can skip optional if building it on the node)
+3. build a docker image for your app (can skip optional if building it on the node)
+4. (opt) push docker image to a private docker registry in gitlab (or somewhere else)
+5. (opt) add your private docker registry in portainer to allow pulling the docker image
+6. use portainer or a docker-compose file to deploy your app docker image, with docker labels:
   - "traefik.enable=true"
   - "traefik.port=3000"
   - "traefik.frontend.rule=Host:your-awesome-domain-name.com,Host:www.your-awesome-domain-name.com" 
