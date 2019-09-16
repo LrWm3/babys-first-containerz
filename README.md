@@ -24,8 +24,7 @@ Get a node and a domain name and set that up properly
 2. create an A record for `your-awesome-domain-name.com` pointing at your DO node IP
 3. create a CNAME record for your domain with `*` to `your-awesome-domain-name.com` to allow all subdomains
 
-> DNS changes can take a while, which can cause automatic ssl to not work properly. I don't have a good way for testing
-that in this repo though so...
+> DNS changes can take a while, which can cause automatic ssl to not work properly. I will add a backdoor to make this easier to test later by adding another docker-compose file. This additional docker-compose feil will expose external backdoor ports to portainer and traefik.
 
 ## supportive baby block: setting up automatic ssl-termination and portainer for support
 
@@ -36,10 +35,10 @@ also sets up `portainer` as a tool even babys can use to monitor and deploy dock
 3. clone this repo `git clone https://github.com/WilliamTheMarsman/babys-first-containerz.git`
 4. replace `codingwhileblack.xyz` with `your-awesome-domain-name.com` in `traefik.toml` and `docker-compose.yml`.
 7. run `docker-compose up -d`
-8. visit `portainer.your-awesome-domain-name.com` and change the admin password right away
+8. visit `portainer.your-awesome-domain-name.com` and **change the admin password right away**
 9. visit `traefik.codingwhileblack.xyz` to see your reverse-proxy stuff
 
-if something isnt working, check the logs for traefik with `docker logs traefik` on the DO node.
+if you can't get to `portainer.your-awesome-domain-name.com`, check the logs for traefik with `docker logs traefik` on the DO node. if you can get to `portainer.your-awesome-domain-name.com`, this is the best place to check the logs.
 
 ## structural baby block: setting up a database type service or other private services your app needs
 
