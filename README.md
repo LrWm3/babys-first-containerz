@@ -87,7 +87,7 @@ app logs can be seen in `portainer.your-awesome-domain-name.com`, navigate to `c
 
 ## but what if baby wants to update the app?
 
-depends on how you did the final baby block. but basically, just redeploy the container using portainer.
+repeat the process for the final baby block. when you attempt to redeploy using portainer, it will replace the old image with the new one.
 
 ## but what if baby wants to deploy another middleware service
 
