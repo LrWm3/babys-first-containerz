@@ -58,6 +58,12 @@ This can be done using labels. It's pretty easy but I am pretty tired right now 
 Basically, you use docker labels to specify how `traefik` should expose the service to the outside world. Here's
 the details in the [traefik docs for docker containers](https://docs.traefik.io/configuration/backends/docker/#on-containers)
 
+Alternatively, this would probably work as docker labels for the UI component of the database:
+
+- "traefik.enable=true"
+- "traefik.port=8080" (specify port which has the UI or whatever)
+- "traefik.frontend.rule=Host:database.your-awesome-domain-name.com"
+
 ## final baby block: building and deploying app middleware
 
 With all the supporting services stood up, we can add the final baby-block to this project.
