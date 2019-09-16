@@ -73,7 +73,7 @@ With all the supporting services stood up, we can add the final baby-block to th
 2. build a docker image for your app (can skip optional if building it on the node)
 3. (opt) push docker image to a private docker registry in gitlab (or somewhere else)
 4. (opt) add your private docker registry in portainer to allow pulling the docker image
-5. use portainer or a docker-compose file to deploy your app docker image, with a docker labels:
+5. use portainer or a docker-compose file to deploy your app docker image, with docker labels:
   - "traefik.enable=true"
   - "traefik.port=3000"
   - "traefik.frontend.rule=Host:your-awesome-domain-name.com,Host:www.your-awesome-domain-name.com" 
