@@ -14,7 +14,7 @@ This project is an attempt at creating a containerization development environmen
 ## I am literally a baby, how do I use this to develop a containerized application?
 
 This infrastructure is split into two main parts; the main directory and `/app`. an example app is found in 
-`/app/example`.
+`/app/example/middleware`. an example database service used by the app is found in `/app/example/database`. I might do an example with them together as well, I haven't decided.
 
 ## foundational baby block: set-up node and domain name forwarding to node 
 
