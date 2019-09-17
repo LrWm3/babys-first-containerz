@@ -1,22 +1,18 @@
-const neo4j = require('neo4j-driver').v1;
+var neo4j = require('neo4j');
+var db = new neo4j.GraphDatabase('http://neo4j:neo4j@neo4j:7474');
 
-const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
-const session = driver.session();
-
-const personName = 'Alice';
-const resultPromise = session.run(
-  'CREATE (a:Person {name: $name}) RETURN a',
-  {name: personName}
-);
-
-resultPromise.then(result => {
-  session.close();
-
-  const singleRecord = result.records[0];
-  const node = singleRecord.get(0);
-
-  console.log(node.properties.name);
-
-  // on application exit:
-  driver.close();
+db.cypher({
+  query: "CREATE (n:Person { name: 'Andy', title: 'Developer' }) RETURN n",
+  params: {
+    email: 'alice@example.com',
+  },
+}, function (err, results) {
+  if (err) throw err;
+  var result = results[0];
+  if (!result) {
+    console.log('No user found.');
+  } else {
+    var user = result['u'];
+    console.log(JSON.stringify(user, null, 4));
+  }
 });

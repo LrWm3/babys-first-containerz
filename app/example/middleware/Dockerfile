@@ -1,7 +1,8 @@
-FROM node
+FROM node as builder
 
-COPY package.json /package.json
+WORKDIR /home/node
+COPY package.json /home/node/package.json
 RUN npm install
 
-COPY index.js /index.js
+COPY index.js /home/node/index.js
 CMD node

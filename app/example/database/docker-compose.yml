@@ -8,5 +8,6 @@ services:
       - "neo4j_data:/bitnami"
     environment:
       - NEO4J_AUTH=neo4j/neo4j
+
 volumes:
   neo4j_data:
